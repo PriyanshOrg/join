@@ -1,0 +1,12 @@
+name: Join our GitHub Organization
+description: Request an invitation to join our GitHub Organization
+title: "I want to join your GitHub Organization"
+labels: [Invitation]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Your Name
+      placeholder: Enter your name here
+    validations:
+      required: true

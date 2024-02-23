@@ -1,0 +1,23 @@
+name: Invite on Label
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  automate_invite:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invite on label
+        uses: vj-abigo/invite-on-label@v1.4
+        with:
+          organization: PriyanshOrg
+          label: Invitation
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          comment: >
+            <b>Invitation sent to join our GitHub Organization.</b>
+            <br>Go to [github.com/PriyanshOrg](https://github.com/PriyanshOrg) and accept the invitation from the popup.
+            <br> > You can also join our Discord community 
+            <br> <br>[![](https://oyepriyansh.pages.dev/6e8rgget)](https://discord.com/invite/AeAjegXn6D)
+        env:
+          INVITE_TOKEN: ${{ secrets.INVITE_TOKEN }}
